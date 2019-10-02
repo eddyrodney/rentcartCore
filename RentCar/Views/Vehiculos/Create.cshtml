@@ -1,0 +1,62 @@
+﻿@model RentCar.Models.Vehiculo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Vehiculo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoChasis" class="control-label"></label>
+                <input asp-for="NoChasis" class="form-control" />
+                <span asp-validation-for="NoChasis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoMotor" class="control-label"></label>
+                <input asp-for="NoMotor" class="form-control" />
+                <span asp-validation-for="NoMotor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoPlaca" class="control-label"></label>
+                <input asp-for="NoPlaca" class="form-control" />
+                <span asp-validation-for="NoPlaca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoVehiculoId" class="control-label"></label>
+                <select asp-for="TipoVehiculoId" class ="form-control" asp-items="ViewBag.TipoVehiculoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoCombustibleId" class="control-label"></label>
+                <select asp-for="TipoCombustibleId" class ="form-control" asp-items="ViewBag.TipoCombustibleId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MarcaId" class="control-label"></label>
+                <select asp-for="MarcaId" class ="form-control" asp-items="ViewBag.MarcaId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,100 @@
+﻿@model IEnumerable<RentCar.Models.Renta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Rentas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-info">Nueva Renta</a>
+</p>
+<table class="table" id="Rentas">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NoRenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaDevolucion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoXDia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadDia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoRenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaDevolucion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoXDia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadDia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleado.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehiculo.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning text-center"><i class="far fa-edit"></i></a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info"><i class="fas fa-info"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"><i class="fas fa-user-times"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $('#Rentas').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        });
+    });
+</script>

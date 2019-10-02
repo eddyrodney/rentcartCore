@@ -1,0 +1,90 @@
+﻿@model RentCar.Models.Inspeccion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Inspeccion</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ralladuras)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ralladuras)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CantidadCombustible)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CantidadCombustible)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GomaRepuesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GomaRepuesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gato)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RoturaCristal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RoturaCristal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GomaSupDerecha)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GomaSupDerecha)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GomaSupIzquierda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GomaSupIzquierda)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GomaTraseraDerecha)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GomaTraseraDerecha)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GomaTraseraIzquierda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GomaTraseraIzquierda)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdRenta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdRenta)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

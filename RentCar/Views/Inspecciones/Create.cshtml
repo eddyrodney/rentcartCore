@@ -1,0 +1,88 @@
+﻿@model RentCar.Models.Inspeccion
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Inspeccion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ralladuras" /> @Html.DisplayNameFor(model => model.Ralladuras)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadCombustible" class="control-label"></label>
+                <input asp-for="CantidadCombustible" class="form-control" />
+                <span asp-validation-for="CantidadCombustible" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="GomaRepuesta" /> @Html.DisplayNameFor(model => model.GomaRepuesta)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Gato" /> @Html.DisplayNameFor(model => model.Gato)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="RoturaCristal" /> @Html.DisplayNameFor(model => model.RoturaCristal)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="GomaSupDerecha" /> @Html.DisplayNameFor(model => model.GomaSupDerecha)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="GomaSupIzquierda" /> @Html.DisplayNameFor(model => model.GomaSupIzquierda)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="GomaTraseraDerecha" /> @Html.DisplayNameFor(model => model.GomaTraseraDerecha)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="GomaTraseraIzquierda" /> @Html.DisplayNameFor(model => model.GomaTraseraIzquierda)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdRenta" class="control-label"></label>
+                <input asp-for="IdRenta" class="form-control" />
+                <span asp-validation-for="IdRenta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<RentCar.Models.Inspeccion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ralladuras)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadCombustible)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GomaRepuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoturaCristal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GomaSupDerecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GomaSupIzquierda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GomaTraseraDerecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GomaTraseraIzquierda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRenta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ralladuras)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadCombustible)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GomaRepuesta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoturaCristal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GomaSupDerecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GomaSupIzquierda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GomaTraseraDerecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GomaTraseraIzquierda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRenta)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

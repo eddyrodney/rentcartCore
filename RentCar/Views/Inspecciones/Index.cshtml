@@ -4,12 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Rentas</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" id="Rentas">
     <thead>
         <tr>
             <th>
@@ -88,14 +88,26 @@
                 @Html.DisplayFor(modelItem => item.Estado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdRenta)
+                @Html.DisplayFor(modelItem => item.Renta.Cliente)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning text-center"><i class="far fa-edit"></i></a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info"><i class="fas fa-info"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"><i class="fas fa-user-times"></i></a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<script>
+    $(document).ready(function () {
+        $('#Rentas').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        });
+    });
+</script>

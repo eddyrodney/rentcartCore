@@ -50,9 +50,9 @@ namespace RentCar.Controllers
         // GET: Rentas/Create
         public IActionResult Create()
         {
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id");
-            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "Id");
-            ViewData["VehiculoId"] = new SelectList(_context.Vehiculos, "Id", "Id");
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Nombre");
+            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "Nombre");
+            ViewData["VehiculoId"] = new SelectList(_context.Vehiculos, "Id", "Descripcion");
             return View();
         }
 
@@ -88,9 +88,9 @@ namespace RentCar.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", renta.ClienteId);
-            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "Id", renta.EmpleadoId);
-            ViewData["VehiculoId"] = new SelectList(_context.Vehiculos, "Id", "Id", renta.VehiculoId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Nombre", renta.ClienteId);
+            ViewData["EmpleadoId"] = new SelectList(_context.Empleados, "Id", "Nombre", renta.EmpleadoId);
+            ViewData["VehiculoId"] = new SelectList(_context.Vehiculos, "Id", "Descripcion", renta.VehiculoId);
             return View(renta);
         }
 

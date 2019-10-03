@@ -48,7 +48,7 @@ namespace RentCar.Controllers
         // GET: Modelos/Create
         public IActionResult Create()
         {
-            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Id");
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Descripcion");
             return View();
         }
 

@@ -95,6 +95,10 @@
     $(document).ready(function () {
         $('#cedula').mask("000-0000000-0", { placeholder: "___-_______-_" });
         $('#tarjeta').mask("0000 0000000 000", { placeholder: "____ ________ ___" });
+        $('#porciento').mask("00.0", { placeholder: "__._" });
+        $('#montoxdia').mask("0000.00", { placeholder: "____._" });
+        $('#cantidaddia').mask("000", { placeholder: "___" });
+        $('#limite').mask("000000.00", { placeholder: "______.__" });
         $("#cedula")
             .focusout(function () {
                 var ced = valida_cedula($("#cedula").val());

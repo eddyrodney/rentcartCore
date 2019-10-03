@@ -50,9 +50,9 @@ namespace RentCar.Controllers
         // GET: Vehiculos/Create
         public IActionResult Create()
         {
-            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Id");
-            ViewData["TipoCombustibleId"] = new SelectList(_context.TiposCombustibles, "Id", "Id");
-            ViewData["TipoVehiculoId"] = new SelectList(_context.TiposVehiculos, "Id", "Id");
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Descripcion");
+            ViewData["TipoCombustibleId"] = new SelectList(_context.TiposCombustibles, "Id", "Descripcion");
+            ViewData["TipoVehiculoId"] = new SelectList(_context.TiposVehiculos, "Id", "Descripcion");
             return View();
         }
 
@@ -69,9 +69,9 @@ namespace RentCar.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Id", vehiculo.MarcaId);
-            ViewData["TipoCombustibleId"] = new SelectList(_context.TiposCombustibles, "Id", "Id", vehiculo.TipoCombustibleId);
-            ViewData["TipoVehiculoId"] = new SelectList(_context.TiposVehiculos, "Id", "Id", vehiculo.TipoVehiculoId);
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Descripcion", vehiculo.MarcaId);
+            ViewData["TipoCombustibleId"] = new SelectList(_context.TiposCombustibles, "Id", "Descripcion", vehiculo.TipoCombustibleId);
+            ViewData["TipoVehiculoId"] = new SelectList(_context.TiposVehiculos, "Id", "Descripcion", vehiculo.TipoVehiculoId);
             return View(vehiculo);
         }
 
